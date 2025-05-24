@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import ParticleBackground from '../components/ParticleBackground';
 import '../styles/Portfolio.scss';
 
 type Project = {
@@ -107,6 +108,17 @@ const Portfolio = () => {
     }
   };
 
+  const handleCloseModal = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setSelectedProject(null);
+  };
+
+  const handleModalClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      setSelectedProject(null);
+    }
+  };
+
   return (
     <motion.div 
       className="portfolio-page"
@@ -114,6 +126,7 @@ const Portfolio = () => {
       animate="visible"
       variants={containerVariants}
     >
+      <ParticleBackground />
       <div className="container">
         <motion.div 
           className="portfolio-header"
@@ -160,11 +173,13 @@ const Portfolio = () => {
               animate="visible"
               exit="exit"
               variants={modalVariants}
+              onClick={handleModalClick}
             >
               <div className="modal-content">
                 <button 
                   className="close-button"
-                  onClick={() => setSelectedProject(null)}
+                  onClick={handleCloseModal}
+                  aria-label="Close modal"
                 >
                   ×
                 </button>

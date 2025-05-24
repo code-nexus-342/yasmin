@@ -50,7 +50,7 @@
     background: linear-gradient(
       45deg,
       rgba($accent-pink, 0.1),
-      rgba($accent-purple, 0.1)
+      rgba($accent-cyan, 0.1)
     );
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -108,8 +108,9 @@
   h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    background: linear-gradient(45deg, $accent-pink, $accent-purple);
+    background: linear-gradient(45deg, $accent-pink, $accent-cyan);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 

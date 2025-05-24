@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
+import ParticleBackground from '../components/ParticleBackground';
 import '../styles/Contact.scss';
 
 const Contact = () => {
@@ -30,10 +31,10 @@ const Contact = () => {
     try {
       // Replace with your EmailJS service ID, template ID, and public key
       await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        'service_m6pzzsp',
+        'template_imhfmwo',
         formData,
-        'YOUR_PUBLIC_KEY'
+        'Utk-nZEbrVZ7ulaqb'
       );
 
       setStatus({
@@ -98,6 +99,7 @@ const Contact = () => {
       animate="visible"
       variants={containerVariants}
     >
+      <ParticleBackground />
       <div className="container">
         <motion.div 
           className="contact-header"
